@@ -10,7 +10,6 @@ Maba Design is a full-featured eCommerce platform specifically designed for show
 
 - [Features](#features)
 - [Tech Stack](#tech-stack)
-- [Screenshots](#screenshots)
 - [Installation](#installation)
 - [Environment Variables](#environment-variables)
 - [Folder Structure](#folder-structure)
