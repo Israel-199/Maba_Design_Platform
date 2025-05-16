@@ -53,17 +53,8 @@ Backend:
 
 ---
 
-## Screenshots
 
-| Homepage | Product Management | Shopping Cart |
-|---------|---------------------|----------------|
-| ![](./screenshots/home.png) | ![](./screenshots/admin.png) | ![](./screenshots/cart.png) |
 
-| Sign In | Shipping Form | User Profile |
-|--------|---------------|--------------|
-| ![](./screenshots/signin.png) | ![](./screenshots/shipping.png) | ![](./screenshots/profile.png) |
-
----
 
 ## Installation
 
