@@ -7,6 +7,8 @@ import { useLogoutMutation } from "../slices/usersApiSlice.js";
 import { logout } from "../slices/authSlice.js";
 import { useNavigate } from "react-router-dom";
 import SearchBox from "./SearchBox";
+import { Image } from "react-bootstrap";
+import logo from "../assets/logo/MbLogo.png";
 
 const Header = () => {
   const { cartItems } = useSelector((state) => state.cart);
@@ -30,7 +32,15 @@ const Header = () => {
     <Navbar bg="dark" variant="dark" expand="md" collapseOnSelect>
       <Container>
         <LinkContainer to="/">
-          <Navbar.Brand>Maba Design</Navbar.Brand>
+          <Navbar.Brand>
+            <Image
+              src={logo}
+              alt="Maba Design"
+              width={95}
+              height="auto"
+              style={{ filter: "brightness(0) saturate(100%) invert(100%)" }}
+            />
+          </Navbar.Brand>
         </LinkContainer>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
