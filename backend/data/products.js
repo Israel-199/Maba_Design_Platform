@@ -81,7 +81,7 @@ const products = [
     price: 400,
     countInStock: 4,
     rating: 8,
-    numReviews: 12,
+    numReviews: 7,
   },
   {
     name: "Petal Handbag",

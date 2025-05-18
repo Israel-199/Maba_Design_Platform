@@ -4,7 +4,6 @@ import { Row, Col, ListGroup, Card, Image, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { toast } from "react-toastify";
-
 import Loader from "../components/Loader";
 import Message from "../components/Message";
 
@@ -61,7 +60,7 @@ const OrderScreen = () => {
           <ListGroup variant="flush">
             <ListGroup.Item>
               <h2>Shipping</h2>
-              <p>
+              <p className="mt-4">
                 <strong>Name: </strong>
                 {order?.user?.name}
               </p>
@@ -147,10 +146,6 @@ const OrderScreen = () => {
                   <Col>Items</Col>
                   <Col>{order?.itemsPrice?.toFixed(2)} ETB</Col>
                 </Row>
-              </ListGroup.Item>
-              <ListGroup.Item>
-                <Col>Tax</Col>
-                <Col>{order?.taxPrice?.toFixed(2)} ETB</Col>
               </ListGroup.Item>
 
               <ListGroup.Item>

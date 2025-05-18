@@ -1,5 +1,5 @@
 import { apiSlice } from "./apiSlice.js";
-import { ORDERS_URL } from "../constants.js";
+import { ORDERS_URL, RECEIPT_URL } from "../constants.js";
 
 export const ordersApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
@@ -15,6 +15,21 @@ export const ordersApiSlice = apiSlice.injectEndpoints({
         url: `${ORDERS_URL}/${orderId}`,
       }),
       keepUnusedDataFor: 5,
+    }),
+    updateOrder: builder.mutation({
+      query: (data) => ({
+        url: `${ORDERS_URL}/${data.orderId}`,
+        method: "PUT",
+        body: data,
+      }),
+      invalidatesTags: ["Orders"],
+    }),
+    uploadOrderImage: builder.mutation({
+      query: (data) => ({
+        url: `${RECEIPT_URL}`,
+        method: "POST",
+        body: data,
+      }),
     }),
     getMyOrders: builder.query({
       query: () => ({
@@ -50,4 +65,6 @@ export const {
   useGetMyOrdersQuery,
   useDeliverOrderMutation,
   usePayOrderMutation,
+  useUploadOrderImageMutation,
+  useUpdateOrderMutation,
 } = ordersApiSlice;

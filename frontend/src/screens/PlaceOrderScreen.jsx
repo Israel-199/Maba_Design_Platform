@@ -28,7 +28,6 @@ const PlaceOrderScreen = () => {
   const dispatch = useDispatch();
   const placeOrderHandler = async () => {
     cart.cartItems.forEach((item) => {
-      console.log("Item:", item);
       if (!item.name) {
         console.error("Missing name for item:", item);
       }
@@ -39,9 +38,9 @@ const PlaceOrderScreen = () => {
         orderItems: cart.cartItems,
         shippingAddress: cart.shippingAddress,
         paymentMethod: cart.paymentMethod,
+
         itemsPrice: cart.itemsPrice,
         shippingPrice: cart.shippingPrice,
-        taxPrice: cart.taxPrice,
         totalPrice: cart.totalPrice,
       }).unwrap();
 
@@ -118,14 +117,7 @@ const PlaceOrderScreen = () => {
                   <Col>Items</Col>
                   <Col>{cart.itemsPrice}ETB</Col>
                 </Row>
-              </ListGroup.Item>
-              <ListGroup.Item>
-                <Row>
-                  <Col>Tax</Col>
-                  <Col>{cart.taxPrice}ETB</Col>
-                </Row>
-              </ListGroup.Item>
-              <ListGroup.Item>
+
                 <Row>
                   <Col>Total</Col>
                   <Col>{cart.totalPrice}ETB</Col>
