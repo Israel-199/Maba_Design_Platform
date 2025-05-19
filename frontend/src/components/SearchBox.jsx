@@ -11,10 +11,11 @@ const SearchBox = () => {
   const submitHandler = (e) => {
     e.preventDefault();
     if (keyword.trim()) {
-      setKeyword("");
+      // If there's a valid search term, navigate to the search results page.
       navigate(`/search/${keyword}`);
     } else {
-      navigate("/");
+      // If no keyword, navigate to the homepage or show all products.
+      navigate("/"); // Redirect to homepage or show all products.
     }
   };
 
