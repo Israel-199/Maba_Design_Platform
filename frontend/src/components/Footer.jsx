@@ -1,6 +1,5 @@
 import { Col, Container, Row } from "react-bootstrap";
 import { FaLinkedin, FaPhone, FaTelegram, FaYoutube } from "react-icons/fa";
-import { Link } from "react-router-dom";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -8,31 +7,31 @@ const Footer = () => {
     <footer>
       <Container fluid>
         <Row className="text-center py-3 color mt-4 ">
-          <h5 className="text-color mb-4 text-center position ">
+          <h5 className="text-color mb-4 text-center position">
             Follow And Contact us!
           </h5>
 
-          <Col md={2}>
-            <Link
-              to="https://lnkd.in/e_Jbn9Yn"
+          <Col md={3}>
+            <a
+              href="https://lnkd.in/e_Jbn9Yn"
               className="text-color d-flex justify-content-center align-items-center gap-1"
               target="_blank"
               rel="noopener noreferrer"
             >
               <FaLinkedin /> Maba_Design
-            </Link>
+            </a>
           </Col>
-          <Col md={2}>
-            <Link
-              to="https://www.youtube.com/@mabadesign?sub_confirmation=1"
+          <Col md={3}>
+            <a
+              href="https://www.youtube.com/@mabadesign?sub_confirmation=1"
               className="text-color d-flex justify-content-center align-items-center gap-1"
               target="_blank"
               rel="noopener noreferrer"
             >
               <FaYoutube /> Maba Design
-            </Link>
+            </a>
           </Col>
-          <Col md={2}>
+          <Col md={3}>
             <a
               href="tel:+251934154175"
               className="text-color d-flex justify-content-center align-items-center gap-1"
@@ -40,20 +39,22 @@ const Footer = () => {
               <FaPhone /> +251934154175
             </a>
           </Col>
-          <Col md={2}>
-            <Link
-              to="https://t.me/mabadesigns"
+          <Col md={3}>
+            <a
+              href="https://t.me/mabadesigns"
               className="text-color d-flex justify-content-center align-items-center gap-1"
               target="_blank"
               rel="noopener noreferrer"
             >
               <FaTelegram /> Maba Design
-            </Link>
+            </a>
           </Col>
+
           <Col className="text-center text-color mt-4">
-            <Link to="/" className="text-color">
+            {/* Use <span> or <a> instead of <Link> */}
+            <span className="text-color">
               @Maba_Design &copy; {currentYear}
-            </Link>
+            </span>
           </Col>
         </Row>
       </Container>
