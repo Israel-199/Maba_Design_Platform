@@ -26,22 +26,13 @@ const ProductEditScreen = () => {
   const {
     data: product,
     isLoading,
-<<<<<<< HEAD
-=======
-
->>>>>>> 734b06d (updated)
     error,
   } = useGetProductDetailsQuery(productId);
 
   const [updateProduct, { isLoading: loadingUpdate }] =
     useUpdateProductMutation();
 
-<<<<<<< HEAD
-  const [uploadProductImage] =
-    useUploadProductImageMutation();
-=======
   const [uploadProductImage] = useUploadProductImageMutation();
->>>>>>> 734b06d (updated)
 
   useEffect(() => {
     if (product) {

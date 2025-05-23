@@ -213,7 +213,7 @@ const ProductScreen = () => {
                     </Form>
                   ) : (
                     <Message>
-                      Please <Link to="/login">Sign in</Link>to write a review
+                      Please <Link to="/login">Sign in</Link> to write a review
                       {""}
                     </Message>
                   )}

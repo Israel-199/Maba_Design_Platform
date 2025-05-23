@@ -43,13 +43,9 @@ const __dirname = path.resolve();
 app.use("/uploads", express.static(path.join(__dirname, "/uploads")));
 
 if (process.env.NODE_ENV === "production") {
-<<<<<<< HEAD
-  app.use("/uploads", express.static("/var/data/uploads"));
-=======
   const __dirname = path.resolve();
   app.use("/uploads", express.static("/var/data/uploads"));
   app.use(express.static(path.join(__dirname, "/frontend/build")));
->>>>>>> 734b06d (updated)
 
   const frontendPath = path.resolve(__dirname, "frontend", "build");
   app.use(express.static(frontendPath));
@@ -65,11 +61,6 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-<<<<<<< HEAD
-
-=======
-// Error handling
->>>>>>> 734b06d (updated)
 app.use(notFound);
 app.use(errorHandler);
 
