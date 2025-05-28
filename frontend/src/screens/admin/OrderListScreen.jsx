@@ -8,7 +8,7 @@ import { useGetOrdersQuery } from "../../slices/ordersApiSlice";
 import { Image } from "react-bootstrap";
 const OrderListScreen = () => {
   const { data: orders, isLoading, error } = useGetOrdersQuery();
-  console.log(orders);
+
   return (
     <>
       <h1>Orders</h1>
