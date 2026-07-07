@@ -2,7 +2,10 @@ import path from "path";
 import express from "express";
 import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
+import cors from "cors";
+
 dotenv.config();
+
 import connectDB from "./config/database.js";
 import productRoutes from "./routes/productRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
@@ -17,6 +20,9 @@ connectDB();
 
 const app = express();
 
+// Allow requests from all origins
+app.use(cors());
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
@@ -29,6 +35,7 @@ app.use("/api/send", receiptRoutes);
 
 if (process.env.NODE_ENV === "production") {
   const __dirname = path.resolve();
+
   app.use("/uploads", express.static("/var/data/uploads"));
   app.use(express.static(path.join(__dirname, "/frontend/build")));
 
@@ -37,7 +44,9 @@ if (process.env.NODE_ENV === "production") {
   });
 } else {
   const __dirname = path.resolve();
+
   app.use("/uploads", express.static(path.join(__dirname, "/uploads")));
+
   app.get("/", (req, res) => {
     res.send("API is running....");
   });
