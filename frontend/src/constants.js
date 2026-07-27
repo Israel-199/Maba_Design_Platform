@@ -1,4 +1,4 @@
-export const BASE_URL = "https://maba-design-platform-duws.onrender.com";
+export const BASE_URL = "https://maba-design-platform-jmjt.onrender.com";
 
 export const PRODUCTS_URL = `${BASE_URL}/api/products`;
 export const USERS_URL = `${BASE_URL}/api/users`;
