@@ -21,7 +21,15 @@ connectDB();
 const app = express();
 
 // Allow requests from all origins
-app.use(cors());
+const corsOptions = {
+  origin: [
+    "https://maba-design-platform.vercel.app",
+    "http://localhost:3000",
+    "http://localhost:3001"
+  ],
+  credentials: true,
+};
+app.use(cors(corsOptions));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
